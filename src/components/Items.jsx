@@ -1,21 +1,18 @@
 import React from 'react'
+import moment from 'moment'
 
-const Items = ({ items }) => {
+const Items = ({ reunion }) => {
+  const DATE_FORMAT = 'DD/MM/YYYY HH:mm'
   return (
-    <>
-      <div>Items</div>
-      <ul>
-        {items.map((item) => (
-          item.status !== 'cancelled' && item.start.dateTime >= new Date().toISOString() &&
-            <li key={item.id}>
-              <hr />
-              <p>{item.summary}</p>
-              <p>Empieza: {new Date(item.start.dateTime).toLocaleDateString('es-ES')}</p>
-              <p>Finaliza: {new Date(item.end.dateTime).toLocaleDateString('es-ES')}</p>
-            </li>
-        ))}
-      </ul>
-    </>
+    <ul>
+      <li key={reunion.id}>
+        <hr />
+        <p>Reunión: {reunion.summary}</p>
+        <p>Empieza: {moment(reunion.start.dateTime).format(DATE_FORMAT)}</p>
+        <p>Finaliza: {moment(reunion.end.dateTime).format(DATE_FORMAT)}</p>
+        <p>Location: {reunion.location}</p>
+      </li>
+    </ul>
   )
 }
 
