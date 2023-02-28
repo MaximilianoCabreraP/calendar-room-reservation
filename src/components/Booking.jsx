@@ -1,0 +1,1 @@
+// Crea un componente Booking que permita a los usuarios reservar salas de reuniones. Para ello, puedes utilizar un formulario que permita a los usuarios ingresar la información necesaria para reservar una sala de reuniones, como la fecha y hora de la reserva, el número de personas y la sala que se desea reservar.
